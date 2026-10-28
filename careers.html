@@ -799,12 +799,15 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
   .btn,button,.nav a{font-weight:600}
 </style>
 <style id="wg-css">
-/* careers: photo grid matches the height of the text column */
-.g2.wide-left.top:has(.workgrid){align-items:stretch}
-.workgrid{align-content:stretch;grid-template-rows:1fr 1fr;height:100%;margin-top:0}
-.workgrid figure{display:flex;flex-direction:column;min-height:0}
-.workgrid img{flex:1;width:100%;height:100%;min-height:150px;object-fit:cover;border-radius:var(--r);aspect-ratio:auto}
-@media(max-width:900px){.workgrid{height:auto;grid-template-rows:none}.workgrid img{aspect-ratio:4/3;flex:none}}
+/* careers: photo grid shows every photo uncropped; lead photo full width, three below */
+.g2.wide-left.top:has(.workgrid){grid-template-columns:1.2fr .8fr;align-items:center}
+@media(max-width:900px){.g2.wide-left.top:has(.workgrid){grid-template-columns:1fr}}
+.workgrid{grid-template-columns:repeat(3,1fr);gap:14px 12px;align-content:start;margin-top:0}
+.workgrid figure{margin:0;min-width:0}
+.workgrid figure:first-child{grid-column:1/-1}
+.workgrid img{width:100%;height:auto;aspect-ratio:900/599;object-fit:cover;display:block;border-radius:var(--r)}
+.workgrid figure:not(:first-child) figcaption{font-size:10.5px}
+@media(max-width:900px){.workgrid{margin-top:8px}}
 .teams>.teamcard:last-child:nth-child(3n+1){grid-column:2}
 @media(max-width:900px){.teams>.teamcard:last-child:nth-child(3n+1){grid-column:auto}}
 </style>
@@ -966,9 +969,9 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
       </div>
     </div>
     <div class="workgrid reveal">
+      <figure><img src="assets/work-despatch.jpg" alt="Loading for despatch at the Inanam plant" loading="lazy"><figcaption>Loading for despatch</figcaption></figure>
       <figure><img src="assets/work-printing.jpg" alt="Checking the printed web at the Inanam plant" loading="lazy"><figcaption>Checking the printed web</figcaption></figure>
       <figure><img src="assets/work-press.jpg" alt="At the press controls at the Inanam plant" loading="lazy"><figcaption>At the press controls</figcaption></figure>
-      <figure><img src="assets/work-despatch.jpg" alt="Loading for despatch at the Inanam plant" loading="lazy"><figcaption>Loading for despatch</figcaption></figure>
       <figure><img src="assets/work-office.jpg" alt="Order handling at the Inanam plant" loading="lazy"><figcaption>Order handling</figcaption></figure>
     </div>
   </div>
