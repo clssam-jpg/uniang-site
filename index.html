@@ -453,17 +453,22 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing
 .hero-slider{position:relative;background:var(--forest);overflow:hidden}
 .slide{display:none;position:relative;min-height:clamp(520px,78vh,760px)}
 .slide.on{display:flex;align-items:center}
-.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;filter:brightness(1.08) saturate(1.06)}
+.slide::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(ellipse 50% 64% at 27% 50%,rgba(23,63,55,.42),rgba(23,63,55,0) 74%);
+  background:radial-gradient(ellipse 50% 64% at 27% 50%,color-mix(in srgb,var(--forest) 42%,transparent),transparent 74%)}
 .slide::after{content:"";position:absolute;inset:0;
-  background:linear-gradient(96deg,
-     rgba(12,16,13,.93) 0%, rgba(12,16,13,.90) 18%, rgba(12,16,13,.84) 32%,
-     rgba(12,16,13,.74) 45%, rgba(12,16,13,.60) 58%, rgba(12,16,13,.45) 72%,
-     rgba(12,16,13,.33) 86%, rgba(12,16,13,.26) 100%)}
+  background:linear-gradient(90deg,rgba(23,63,55,.84) 0%,rgba(23,63,55,.74) 30%,rgba(23,63,55,.54) 50%,rgba(23,63,55,.22) 68%,rgba(23,63,55,0) 86%),linear-gradient(0deg,rgba(23,63,55,.5) 0%,rgba(23,63,55,0) 32%);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--forest) 84%,transparent) 0%,color-mix(in srgb,var(--forest) 74%,transparent) 30%,color-mix(in srgb,var(--forest) 54%,transparent) 50%,color-mix(in srgb,var(--forest) 22%,transparent) 68%,transparent 86%),linear-gradient(0deg,color-mix(in srgb,var(--forest) 50%,transparent) 0%,transparent 32%)}
+@media(max-width:700px){.slide::after{background:linear-gradient(180deg,rgba(23,63,55,.62),rgba(23,63,55,.80));background:linear-gradient(180deg,color-mix(in srgb,var(--forest) 62%,transparent),color-mix(in srgb,var(--forest) 80%,transparent))}}
 .slide .wrap{position:relative;z-index:2;width:100%;padding-top:48px;padding-bottom:96px;color:#EDF1EC}
 .slide .kicker{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.18em;
   text-transform:uppercase;color:#8FBFA2}
 .slide h2{color:#fff;font-size:clamp(30px,4.3vw,54px);max-width:18ch;margin:16px 0 14px;letter-spacing:-.032em;line-height:1.06}
 .slide p{color:rgba(237,241,236,.88);max-width:50ch;font-size:17.5px;margin-bottom:26px}
+.slide .kicker{color:#CFE8DC}
+.slide h2{text-shadow:0 2px 24px rgba(0,0,0,.28)}
+.slide p{text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .slide .btn.line{color:#fff;border-color:rgba(255,255,255,.5)}
 .slide .btn.line:hover{background:rgba(255,255,255,.14)}
 .slider-ui{position:absolute;left:0;right:0;bottom:0;z-index:3}
@@ -476,6 +481,8 @@ figcaption{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing
   color:#fff;cursor:pointer;display:grid;place-items:center;border-radius:var(--r)}
 .arrows button:hover{background:rgba(255,255,255,.16)}
 .arrows svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2}
+.arrows button{background:rgba(10,24,20,.32);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.arrows button:hover{background:rgba(10,24,20,.5)}
 @media(max-width:700px){.slide{min-height:clamp(440px,68vh,560px)}
   .slide .wrap{padding-top:36px;padding-bottom:84px}.arrows{display:none}}
 
@@ -901,7 +908,7 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
               <a href="products.html#surface-printed">Surface Printing<small>Vest, boutique, flat-mouth</small></a>
               <a href="products.html#premade-bags">Flexible Packaging (Pieces)<small>3/4-side, centre seal, stand-up</small></a>
               <a href="products.html#rice-bags">Rice Bags &mdash; Laminated<small>3, 8-side and centre seal</small></a>
-              <a href="products.html#rice-bags">Rice Bags &mdash; Plain<small>Surface printed, economical</small></a>
+              <a href="product-rice-bag-surface-printed.html">Rice Bag (Surface Printing)<small>Single colour, economical</small></a>
             </div>
             <div class="mega-col">
               <h4>Film &amp; roll</h4>
@@ -912,7 +919,7 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
             </div>
             <div class="mega-feature">
               <img src="assets/product-range.jpg" alt="">
-              <strong>23 formats, 8 categories</strong>
+              <strong>23 formats, 7 categories</strong>
               <p>The full 2025 catalogue, from a printed vest bag to an eight-side-seal rice pack.</p>
               <a class="go" href="products.html">View all products &rarr;</a>
             </div>
@@ -1040,8 +1047,8 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
       <a class="segment reveal" href="products.html#roll-form">
         <img src="assets/n-roll-form-plain.jpg" alt="Laminated film supplied on the roll">
         <div class="segment-body">
-          <h3>Roll form for FFS</h3>
-          <p>Roll form, side seal and slit seal rollstock wound to your form-fill-seal machine's core and web width.</p>
+          <h3>Roll form for FFS machines</h3>
+          <p>Roll form, side seal and slit seal rollstock wound to your form-fill-seal (FFS) machine's core and web width.</p>
           <span class="go">Explore &rarr;</span>
         </div>
       </a>
@@ -1114,7 +1121,7 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
 <section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Ten families, all off our own lines.</h2>
+      <h2>Seven product categories, all off our own lines.</h2>
       <p class="lede">Send a current sample and the machine it runs on, and we will come back with a structure, a gauge and a price.</p>
     </div>
     <div class="pgrid">
