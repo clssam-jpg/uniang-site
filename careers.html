@@ -798,6 +798,16 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
   h3,h4{font-weight:700;letter-spacing:-.012em}
   .btn,button,.nav a{font-weight:600}
 </style>
+<style id="wg-css">
+/* careers: photo grid matches the height of the text column */
+.g2.wide-left.top:has(.workgrid){align-items:stretch}
+.workgrid{align-content:stretch;grid-template-rows:1fr 1fr;height:100%;margin-top:0}
+.workgrid figure{display:flex;flex-direction:column;min-height:0}
+.workgrid img{flex:1;width:100%;height:100%;min-height:150px;object-fit:cover;border-radius:var(--r);aspect-ratio:auto}
+@media(max-width:900px){.workgrid{height:auto;grid-template-rows:none}.workgrid img{aspect-ratio:4/3;flex:none}}
+.teams>.teamcard:last-child:nth-child(3n+1){grid-column:2}
+@media(max-width:900px){.teams>.teamcard:last-child:nth-child(3n+1){grid-column:auto}}
+</style>
 </head>
 <body>
 
@@ -863,7 +873,7 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
               <a href="products.html#surface-printed">Surface Printing<small>Vest, boutique, flat-mouth</small></a>
               <a href="products.html#premade-bags">Flexible Packaging (Pieces)<small>3/4-side, centre seal, stand-up</small></a>
               <a href="products.html#rice-bags">Rice Bags &mdash; Laminated<small>3, 8-side and centre seal</small></a>
-              <a href="products.html#rice-bags">Rice Bags &mdash; Plain<small>Surface printed, economical</small></a>
+              <a href="product-rice-bag-surface-printed.html">Rice Bag (Surface Printing)<small>Single colour, economical</small></a>
             </div>
             <div class="mega-col">
               <h4>Film &amp; roll</h4>
@@ -874,7 +884,7 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
             </div>
             <div class="mega-feature">
               <img src="assets/product-range.jpg" alt="">
-              <strong>23 formats, 8 categories</strong>
+              <strong>23 formats, 7 categories</strong>
               <p>The full 2025 catalogue, from a printed vest bag to an eight-side-seal rice pack.</p>
               <a class="go" href="products.html">View all products &rarr;</a>
             </div>
@@ -1013,6 +1023,11 @@ html[data-theme="dark"] .sec.tight.mist .pcard{background:var(--mist)}
         <figure><img src="assets/team-bagmaking.jpg" alt="Bag-making team at the Inanam plant" loading="lazy"></figure>
         <h4>Bag-making</h4>
         <p>Converting hall, side seal to stand-up pouch.</p>
+      </article>
+      <article class="teamcard reveal">
+        <figure><img src="assets/team-converting.jpg" alt="Converting team at the Inanam plant" loading="lazy"></figure>
+        <h4>Converting</h4>
+        <p>Printed film made into pillow, side seal and three side seal bags.</p>
       </article>
       <article class="teamcard reveal">
         <figure><img src="assets/team-quality.jpg" alt="Quality control team at the Inanam plant" loading="lazy"></figure>
